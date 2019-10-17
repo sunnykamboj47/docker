@@ -1,2 +1,2 @@
 [dev]
-172.31.23.198
+18.189.32.6 ansible_user=root ansible_ssh_pass=redhat
