@@ -1,11 +1,10 @@
 - name: Create apex service
   hosts: dev2
-  connection: local
   tasks:  
      - name: Deploy image to target registry docker service ls will be run
      
-       shell: >
-          docker service ls  
+       command: 
+          docker service ls
   
     
  
@@ -15,7 +14,5 @@
   connection: local
   tasks:  
      - name: install from docker file 
-       shell: >
-          docker stack deploy --compose-file docker-stack.yml sunny
-        
-       
+       command: 
+         docker stack deploy --compose-file docker-compose.yml vote 

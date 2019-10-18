@@ -7,14 +7,8 @@
 set -e
 
 ENV=$1
-IMG=$2
- 
+ansible-playbook -i ./env/$ENV/inventory  ./deploy/deploy-app.yml  
 
-echo "Deploy app..."
-sshpass -p $PASSWORD ansible-playbook -i ./env/$ENV/inventory --ask-pass ./deploy/deploy-app.yml  
-
-echo "Deploy volume..."
-sshpass -p $PASSWORD ansible-playbook -i ./env/$ENV/inventory --ask-pass ./deploy/deploy-volume.yml  
 
 
 
