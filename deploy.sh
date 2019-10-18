@@ -7,7 +7,7 @@
 set -e
 
 ENV=$1
-ansible-playbook -i ./env/$ENV/inventory  ./deploy/deploy-app.yml  
+ansible-playbook -i ./$ENV/$IMG/env/dev/inventory  ./deploy/deploy-app.yml  
 
 
 
